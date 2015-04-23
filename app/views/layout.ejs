@@ -30,10 +30,11 @@
 
     <!--STYLES-->
     <link rel="stylesheet" href="/styles/importer.css">
+    <link rel="stylesheet" href="/styles/primary/demo.css">
     <!--STYLES END-->
   </head>
 
-  <body>
+  <body class="<%= req.options.controller + ' ' + req.options.action %>">
     <%- body %>
 
 
@@ -60,7 +61,7 @@
     -->
 
     <!--TEMPLATES-->
-
+    
     <!--TEMPLATES END-->
 
 
@@ -89,7 +90,9 @@
 
     <!--SCRIPTS-->
     <script src="/js/dependencies/sails.io.js"></script>
+    <script src="/js/dependencies/require.js"></script>
     <!--SCRIPTS END-->
     <script src="/js/primary/<%= req.options.controller %>.js"></script>
+    <%- partial (req.options.controller + '/script.ejs') %>
   </body>
 </html>

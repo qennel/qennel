@@ -16,7 +16,9 @@ module.exports = {
     /*return res.json({
       todo: 'show() is not implemented yet!'
     });*/
-    return res.view('demo');
+    return res.view('demo/show', {
+      firstName: 'Artem'
+    });
   }
 };
 
