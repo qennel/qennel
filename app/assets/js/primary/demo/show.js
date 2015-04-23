@@ -1,3 +1,4 @@
+/*
 define(function () {
   //Do setup work here
 
@@ -6,3 +7,6 @@ define(function () {
     size: "unisize"
   }
 });
+*/
+
+var test = 'artem';
