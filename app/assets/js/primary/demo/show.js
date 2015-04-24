@@ -9,4 +9,4 @@ define(function () {
 });
 */
 
-var test = 'artem';
+//var test = 'artem';
