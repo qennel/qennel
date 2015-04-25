@@ -93,7 +93,7 @@
     <script src="/js/dependencies/angular.min.js"></script>
     <script src="/js/dependencies/require.js"></script>
     <!--SCRIPTS END-->
-    <script src="/js/primary/<%= req.options.controller %>.js"></script>
-    <%- partial (req.options.controller + '/script_manifest.ejs') %>
+    <%- partial (req.options.controller + '/js_manifest.ejs') %>
+    <%-scripts%>
   </body>
 </html>

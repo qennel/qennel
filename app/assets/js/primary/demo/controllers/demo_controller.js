@@ -1,5 +1,7 @@
 qApp.controller('DemoCtrl', ['$scope',
     function ($scope) {
-      console.log('DemoCtrl');
+      $scope.init = function (data) {
+        console.log('DemoCtrl init');
+      };
     }
 ]);
