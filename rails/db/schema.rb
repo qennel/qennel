@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150430033424) do
+ActiveRecord::Schema.define(version: 20150430044132) do
 
   create_table "professions", force: :cascade do |t|
     t.string "name",     limit: 255, default: "", null: false
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20150430033424) do
   create_table "programming_platforms", force: :cascade do |t|
     t.string  "name",                    limit: 255
     t.integer "programming_language_id", limit: 4
-    t.string  "type",                    limit: 11
+    t.string  "platform_type",           limit: 11
   end
 
   add_index "programming_platforms", ["name"], name: "programming_platform_name", length: {"name"=>100}, using: :btree
@@ -50,10 +50,21 @@ ActiveRecord::Schema.define(version: 20150430033424) do
     t.string   "last_sign_in_ip",        limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "profession_id",          limit: 4
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "users_roles", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
+    t.integer  "role_id",    limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "users_roles", ["role_id", "user_id"], name: "idx2", using: :btree
+  add_index "users_roles", ["user_id", "role_id"], name: "idx1", using: :btree
 
   create_table "yc_companies", id: false, force: :cascade do |t|
     t.string "status",      limit: 255
