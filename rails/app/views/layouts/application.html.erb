@@ -2,6 +2,7 @@
 <html>
 	<%= render 'layouts/components/head' %>
 	<body class="<%=params[:controller]%> <%=params[:action]%>">
+	<%= image_tag(image_path('qennel_cover_cmp.png'))%>
 		<%= render 'layouts/components/messages' %>
 		<%= yield %>
 		<%= render 'layouts/components/js' %>
