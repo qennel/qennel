@@ -1,0 +1,14 @@
+@mixin opacity ($value) {
+	$ms_value: $value * 100;
+
+	-moz-opacity: $value;
+	-khtml-opacity: $value;
+	opacity: $value;
+	//-ms-filter: "progid:DXImageTransform.Microsoft.Alpha"(Opacity=$ms_value);
+	filter: progid:DXImageTransform.Microsoft.Alpha(opacity=$ms_value);
+	filter:alpha(opacity=$ms_value);
+}
+
+@mixin opacity-tint ($value) {
+	background:rgba(0,0,0,$value);
+}
