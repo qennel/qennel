@@ -1,14 +1,17 @@
 @import "_components/mixins/mixin.fonts";
 @import "_components/mixins/mixin.styling";
 
-html, html a {
-	-webkit-font-smoothing: antialiased !important;
-	text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
-}
-
 html, body {
-	@include raleway_font(14px);
+	@include raleway_font(14px, 400);
 	height: 100%;
+
+	.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+		font-weight: 300;
+	}
+
+	label {
+		font-weight: 500;
+	}
 
 	.jumbo-background {
 		background: url('/images/qennel_cover_cmp.png') no-repeat center center fixed;
@@ -41,6 +44,10 @@ html, body {
 				width: 100%;
 				color: #FFFFFF;
 				padding: 50px;
+
+				input {
+					color: #777777;
+				}
 			}
 		}
 	}
