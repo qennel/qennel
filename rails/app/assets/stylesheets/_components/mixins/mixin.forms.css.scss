@@ -1,0 +1,50 @@
+@import "mixin.styling.css.scss";
+
+@mixin modern-form-control ($background: #FFF, $size: 'large', $width: 100%, $font-size: null, $height: 42px) {
+	$padding: 6px 12px;
+
+	@if($font-size != null) {
+		// use default
+	}
+	@else {
+		@if $size == "medium" {
+			$font-size: 17px;
+		}
+		@else {
+			$font-size: 22px;
+		}
+	}
+
+	@if $size == "medium" {
+		$height: 34px;
+		$padding: 5px 11px;
+	}
+
+	@if $size == "tiny" {
+		$height: 27px;
+		$padding: 5px 9px;
+	}
+
+	.modern-form-control {
+		@include placeholder (#BABABA, 500);
+		@include border_radius(2px);
+		height: $height;
+		font-size: $font-size;
+		font-weight: 300;
+		width: $width;
+		padding: $padding;
+		color: #666666;
+
+		border: none;
+		border-bottom: 1px solid #EEEEEE;
+		box-shadow: inset 0 1px 2px rgba(0,0,0,.30), 0 -1px 1px $background, 0 1px 0 $background;
+	}
+
+	textarea.modern-form-control {
+		height: 250px;
+
+		&.short-textarea {
+			height: 130px;
+		}
+	}
+}

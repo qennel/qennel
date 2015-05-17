@@ -2,38 +2,47 @@
 	<div class="jumbo-container">
 		<div class="jumbo-container-content">
 			<div class="access-form">
-			<h2>Sign up</h2>
-
-			<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-				<%= devise_error_messages! %>
-
-				<%= f.hidden_field :profession_id, :value => 1 %>
-				<div class="field">
-					<%= f.label :email %><br />
-					<%= f.email_field :email, autofocus: true %>
+				<div class="qennel-logo-transparent">
+					<%= image_tag 'qennel_logo_transparent.png'%>
 				</div>
+				<h2>Sign up</h2>
 
-				<div class="field">
-					<%= f.label :password %>
-					<% if @validatable %>
-					<em>(<%= @minimum_password_length %> characters minimum)</em>
-					<% end %><br />
-					<%= f.password_field :password, autocomplete: "off" %>
-				</div>
-<!--
+				<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+					<%= devise_error_messages! %>
 
-				<div class="field">
-					<%#= f.label :password_confirmation %><br />
-					<%#= f.password_field :password_confirmation, autocomplete: "off" %>
-				</div>
--->
+					<%= f.hidden_field :profession_id, :value => 1 %>
+					<div class="field">
+						<%= f.label :email %><br />
+						<%= f.email_field :email, autofocus: true, :class => 'form-control modern-form-control' %>
+					</div>
 
-				<div class="actions">
-					<%= f.submit "Sign up" %>
-				</div>
-			<% end %>
+					<div class="field">
+						<%= f.label :password %>
+						<% if @validatable %>
+						<em>(<%= @minimum_password_length %> characters minimum)</em>
+						<% end %><br />
+						<%= f.password_field :password, autocomplete: "off", :class => 'form-control modern-form-control' %>
+					</div>
+	<!--
 
-			<%= render "devise/shared/links" %>
+					<div class="field">
+						<%#= f.label :password_confirmation %><br />
+						<%#= f.password_field :password_confirmation, autocomplete: "off" %>
+					</div>
+	-->
+
+					<div class="actions row">
+						<div class="col-xs-6">
+							<%= f.submit "Sign up", :class => 'btn modern-button modern-primary-button' %>
+						</div>
+						<div class="col-xs-6 text-right">
+							Already have an account?<br/>
+							<%= link_to "Log in", new_session_path(resource_name) %><br />
+							<%#= render "devise/shared/links" %>
+						</div>
+					</div>
+				<% end %>
+
 			</div>
 		</div>
 	</div>

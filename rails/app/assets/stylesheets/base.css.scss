@@ -1,5 +1,7 @@
 @import "_components/mixins/mixin.fonts";
 @import "_components/mixins/mixin.styling";
+@import '_components/mixins/mixin.forms';
+@import '_components/mixins/mixin.buttons';
 
 html, body {
 	@include raleway_font(14px, 400);
@@ -11,6 +13,21 @@ html, body {
 
 	label {
 		font-weight: 500;
+	}
+
+	.modern-button {
+		@include modern_button;
+		@include modern_primary_button;
+		@include modern_small_button;
+		@include modern_round_button;
+	}
+	
+	.qennel-logo-transparent {
+		text-align: center;
+
+		img {
+			width: 200px;
+		}
 	}
 
 	.jumbo-background {
@@ -29,6 +46,8 @@ html, body {
 		transform-style: preserve-3d;
 
 		.jumbo-container {
+			@include modern-form-control(#F0F0F0, 'large', 100%, 18px);
+
 			$container-width: 100%;
 			$container-height: 300px;
 
@@ -45,8 +64,13 @@ html, body {
 				color: #FFFFFF;
 				padding: 50px;
 
-				input {
-					color: #777777;
+				.field, .actions {
+					margin-bottom: 20px;
+				}
+
+				a {
+					color: #ffffff;
+					text-decoration: underline;
 				}
 			}
 		}

@@ -12,3 +12,34 @@
 @mixin opacity-tint ($value) {
 	background:rgba(0,0,0,$value);
 }
+
+@mixin border_radius ($radius) {
+	-webkit-border-radius: $radius; -moz-border-radius: $radius; border-radius: $radius;
+}
+
+@mixin placeholder ($color, $font-weight: 200) {
+	&::-webkit-input-placeholder { /* WebKit browsers */
+		color: $color;
+		font-weight: $font-weight;
+	}
+	&:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+		color: $color;
+		opacity:  1;
+		font-weight: $font-weight;
+	}
+	&::-moz-placeholder { /* Mozilla Firefox 19+ */
+		color: $color;
+		opacity:  1;
+		font-weight: $font-weight;
+	}
+	&:-ms-input-placeholder { /* Internet Explorer 10+ */
+		color: $color;
+		font-weight: $font-weight;
+	}
+}
+
+@mixin box_shadow ($bs_object) {
+	box-shadow: $bs_object;
+	-webkit-box-shadow: $bs_object;
+	-moz-box-shadow: $bs_object;
+}

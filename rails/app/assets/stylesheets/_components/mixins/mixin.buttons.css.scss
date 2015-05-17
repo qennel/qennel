@@ -1,0 +1,67 @@
+@import "mixin.fonts";
+@import "mixin.styling";
+@import "../constants";
+
+$modern-button-width: 200px;
+$modern-button-font-size: 20px;
+$modern-small-button-width: 165px;
+$modern-small-button-font-size: 14px;
+$modern-round-button-diameter: 45px;
+
+@mixin modern_button ($width: inherit, $font_size: 14px, $color: #ffffff, $background-color: #000000) {
+	-webkit-font-smoothing: antialiased !important;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+
+	min-width: $width;
+	color: $color;
+	background-color: $background-color;
+	border-color: $background-color;
+	padding: 12px 30px;
+	line-height: $font_size + 3px;
+	text-transform: capitalize;
+
+	@include border_radius(2px);
+	@include raleway_font($font_size, 400);
+	@include box_shadow(0px 1px 2px #333);
+}
+
+@mixin modern_color_button ($color: #ffffff, $background-color: #000000, $border-color: #000000, $font-size: $modern-button-width) {
+	color: $color;
+	background-color: $background-color;
+	border-color: $background-color;
+	font-size: $font-size;
+
+	&:hover {
+		background-color: darken($background-color, 12%);
+		border-color: darken($background-color, 12%);
+	}
+}
+
+/*	color buttons are primary and include the modern button	*/
+@mixin modern_primary_button ($width: $modern-button-width) {
+	&.modern-primary-button {
+		@include modern_color_button(#ffffff, $qennel-color, $qennel-color, $modern-button-font-size);
+		min-width: $width;
+	}
+}
+
+/*	size, share, etc are add-ons to color buttons	*/
+@mixin modern_small_button () {
+	&.modern-small-button {
+		min-width: $modern-small-button-width;
+		line-height: 32px;
+		padding: 0px 12px;
+		font-size: $modern-small-button-font-size;
+	}
+}
+
+@mixin modern_round_button () {
+	&.modern-round-button {
+		@include border_radius(50%);
+
+		width: $modern-round-button-diameter;
+		height: $modern-round-button-diameter;
+		min-width: 0px;
+		padding: 0px;
+	}
+}
