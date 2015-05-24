@@ -1,0 +1,9 @@
+@import 'mixins/mixin.logo';
+
+.access-form {
+	@include qennel-logo-transparent(200px);
+
+	margin: 0px auto;
+	min-width: 300px;
+	max-width: 500px;
+}

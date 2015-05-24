@@ -1,26 +1,43 @@
-<h2>Log in</h2>
+<div class="jumbo-background">
+	<div class="jumbo-container">
+		<div class="jumbo-container-content">
+			<div class="access-form">
+				<div class="qennel-logo-transparent">
+					<%= image_tag 'qennel_logo_transparent.png'%>
+				</div>
+				<h2>Log in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+				<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+					<div class="field">
+						<%= f.label :email %><br />
+						<%= f.email_field :email, autofocus: true, :class => 'form-control modern-form-control' %>
+					</div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+					<div class="field">
+						<%= f.label :password %><br />
+						<%= f.password_field :password, autocomplete: "off", :class => 'form-control modern-form-control' %>
+					</div>
 
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end -%>
+					<% if devise_mapping.rememberable? -%>
+						<div class="field">
+							<%= f.check_box :remember_me %>
+							<%= f.label :remember_me %>
+						</div>
+					<% end -%>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
+					<div class="actions row">
+						<div class="col-xs-6">
+							<%= f.submit "Log in", :class => 'btn modern-button modern-primary-button' %>
+						</div>
+						<div class="col-xs-6 text-right">
+							Haven't joined yet?<br/>
+							<%= link_to "Get started", new_registration_path(resource_name) %><br />
+							<%#= render "devise/shared/links" %>
+						</div>
+					</div>
+				<% end %>
 
-<%= render "devise/shared/links" %>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,9 @@
+@mixin qennel-logo-transparent ($width: 200px) {
+	.qennel-logo-transparent {
+		text-align: center;
+
+		img {
+			width: $width;
+		}
+	}
+}

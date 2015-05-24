@@ -1,0 +1,48 @@
+@import "mixins/mixin.fonts";
+@import 'mixins/mixin.forms';
+
+.jumbo-background {
+	background: url('/images/qennel_cover_cmp.png') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+
+	position: relative;
+	height: 100%;
+	height: 100vh;
+
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+
+	.jumbo-container {
+		@include modern-form-control(#F0F0F0, 'large', 100%, 18px);
+
+		$container-width: 100%;
+		$container-height: 300px;
+
+		top: 50%;
+		transform: translateY(-50%);
+
+		width: $container-width;
+		position: absolute;
+		//top: 20%;
+		@include opacity-tint(.7);
+
+		.jumbo-container-content {
+			width: 100%;
+			color: #FFFFFF;
+			padding: 50px;
+
+			.field, .actions {
+				margin-bottom: 20px;
+			}
+
+			a {
+				color: #ffffff;
+				text-decoration: underline;
+			}
+		}
+	}
+}
